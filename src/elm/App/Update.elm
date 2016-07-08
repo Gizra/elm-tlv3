@@ -1,10 +1,12 @@
 module App.Update exposing (init, update, Msg(..))
 
 import App.Model exposing (..)
+import Pages.Login.Update exposing (..)
 
 
 type Msg
-    = SetActivePage Page
+    = PageLogin Pages.Login.Update.Msg
+    | SetActivePage Page
 
 
 init : ( Model, Cmd Msg )
@@ -17,3 +19,13 @@ update msg model =
     case msg of
         SetActivePage page ->
             { model | activePage = page } ! []
+
+        PageLogin msg ->
+            let
+                ( val, cmds ) =
+                    Pages.Login.Update.update msg model.pageLogin
+
+                model' =
+                    { model | pageLogin = val }
+            in
+                ( model', Cmd.map PageLogin cmds )
