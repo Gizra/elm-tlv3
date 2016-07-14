@@ -2,13 +2,20 @@
 
 > elm-tlv3
 
-## Installation
+## Prerequisites
 
 Make sure the following are installed:
 
 * NodeJs (and npm)
 * Elm (e.g. `npm install -g elm@0.17.0`)
 * Compass (for SASS) (`gem update --system && gem install compass`)
+
+## Installation
+
+```shell
+npm install
+elm-package install -y
+```
 
 ## Usage
 
