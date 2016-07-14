@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/amitaibu/elm-tlv3.svg?branch=master)](https://travis-ci.org/amitaibu/elm-tlv3)
+[![Build Status](https://travis-ci.org/Gizra/elm-tlv3.svg?branch=master)](https://travis-ci.org/Gizra/elm-tlv3)
 
 > elm-tlv3
 
