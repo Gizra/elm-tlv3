@@ -22,6 +22,10 @@ view model =
                 ]
                 []
               -- Submit button
-            , button [ class "ui primary button" ] [ text "Login" ]
+            , button
+                [ class "ui primary button"
+                , onClick TryLogin
+                ]
+                [ text "Login" ]
             ]
         ]
