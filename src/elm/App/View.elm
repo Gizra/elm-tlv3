@@ -9,19 +9,50 @@ import App.Update exposing (..)
 
 view : Model -> Html Msg
 view model =
+    div [ class "ui container main" ]
+        [ viewHeader model
+        , viewContent model
+        , pre [ class "ui padded secondary segment" ]
+            [ text <| toString model ]
+        ]
+
+
+viewHeader : Model -> Html Msg
+viewHeader model =
+    div [ class "ui secondary pointing menu" ]
+        [ a
+            [ classByPage Login model.activePage
+            , onClick <| SetActivePage Login
+            ]
+            [ text "Login" ]
+        , a
+            [ classByPage PageNotFound model.activePage
+            , onClick <| SetActivePage PageNotFound
+            ]
+            [ text "404 page" ]
+        ]
+
+
+viewContent : Model -> Html Msg
+viewContent model =
     case model.activePage of
         Login ->
             div [ class "ui container main" ]
                 [ h2 [] [ text "Login page" ]
-                , button [ onClick <| SetActivePage PageNotFound ] [ text "Change to 404 page" ]
-                , pre [ class "ui padded secondary segment" ]
-                    [ text <| toString model ]
                 ]
 
         PageNotFound ->
             div [ class "ui container main" ]
                 [ h2 [] [ text "Page not found" ]
-                , button [ onClick <| SetActivePage Login ] [ text "Change to Login page" ]
-                , pre [ class "ui padded secondary segment" ]
-                    [ text <| toString model ]
                 ]
+
+
+{-| Get menu items classes. This function gets the active page and checks if
+it is indeed the page used.
+-}
+classByPage : Page -> Page -> Attribute a
+classByPage page activePage =
+    classList
+        [ ( "item", True )
+        , ( "active", page == activePage )
+        ]
