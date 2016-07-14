@@ -7,8 +7,8 @@
 From a simple counter to (almost) a full [SPA example](https://github.com/Gizra/elm-spa-example), in small steps:
 
 * [1st step; Add App component](https://github.com/Gizra/elm-tlv3/pull/1)
-* [2nd step; Add navbar menu]((https://github.com/Gizra/elm-tlv3/pull/2)
-* [3rd step; Add Login page sub component]((https://github.com/Gizra/elm-tlv3/pull/3)
+* [2nd step; Add navbar menu](https://github.com/Gizra/elm-tlv3/pull/2)
+* [3rd step; Add Login page sub component](https://github.com/Gizra/elm-tlv3/pull/3)
 * [4th step; Add user and fetch from GitHub](https://github.com/Gizra/elm-tlv3/pull/4)
 
 ## Prerequisites
